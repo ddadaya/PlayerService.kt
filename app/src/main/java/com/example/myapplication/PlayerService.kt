@@ -53,6 +53,8 @@ class PlayerService : Service() {
 
         when (intent?.action) {
             "START" -> {
+                resourceId = intent.getIntExtra("resourceId", 0)
+                titleAndArtist = intent.getStringExtra("titleAndArtist").toString()
                 start()
             }
             "PAUSE" -> {
@@ -82,10 +84,12 @@ class PlayerService : Service() {
     private fun start() {
         if (resourceId != 0) {
             if(mediaPlayer==null) {
+                mediaPlayer.reset()
                 mediaPlayer = MediaPlayer.create(this, resourceId)
                 mediaPlayer.start()
                 isPlaying = true
             } else{
+                mediaPlayer.stop()
                 mediaPlayer.reset()
                 mediaPlayer = MediaPlayer.create(this, resourceId)
                 mediaPlayer.start()

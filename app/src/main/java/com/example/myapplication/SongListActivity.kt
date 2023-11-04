@@ -64,7 +64,6 @@ class SongListActivity : AppCompatActivity() {
             intentA.putExtra("titleAndArtist", selectedSong.name)
             startActivity(intentA)
 
-
         }
     }
 }
