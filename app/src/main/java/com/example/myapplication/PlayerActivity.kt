@@ -21,9 +21,9 @@ class PlayerActivity: AppCompatActivity() {
             if (intent != null && intent.action == "PLAYER_STATE_CHANGED") {
                 isPlaying = intent.getBooleanExtra("isPlaying", false)
                 titleAndArtist = intent.getStringExtra("titleAndArtist").toString()
-                // Обновите кнопку в соответствии с состоянием воспроизведения (isPlaying)
-                    updatePlayPauseButton(isPlaying)
-                    nameView.text=titleAndArtist
+
+                updatePlayPauseButton(isPlaying)
+                nameView.text=titleAndArtist
             }
         }
     }

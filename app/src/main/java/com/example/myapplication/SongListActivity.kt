@@ -20,12 +20,12 @@ class SongListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         if (!NotificationManagerCompat.from(this).areNotificationsEnabled()) {
-            // Разрешение на уведомления не предоставлено, показываем диалоговое окно с запросом
+
             AlertDialog.Builder(this)
                 .setTitle("Разрешить уведомления")
                 .setMessage("Для получения уведомлений, пожалуйста, разрешите их в настройках приложения.")
                 .setPositiveButton("Перейти к настройкам") { _, _ ->
-                    // Перенаправляем пользователя в настройки приложения
+
                     val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     val uri: Uri = Uri.fromParts("package", packageName, null)

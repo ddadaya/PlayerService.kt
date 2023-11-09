@@ -149,6 +149,8 @@ class PlayerService : Service() {
     private fun createNotification(isPlaying: Boolean): Notification {
 
         val notificationIntent = Intent(this, PlayerActivity::class.java)
+
+
         val pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_IMMUTABLE)
 
         val pausePlayIntent =
